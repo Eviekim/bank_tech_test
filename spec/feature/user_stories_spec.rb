@@ -24,5 +24,15 @@ describe 'User Stories' do
   expect(bank.balance).to eq(1000)
  end 
 
- 
+ # As a customer,
+ # So that I can access the deposit in my accouunt,
+ # I need to be able to make a withdrawal.
+
+ it 'can make a withdrawal' do
+  bank = Bank.new 
+  bank.deposit(1000)
+  bank.withdrawal(500)
+  expect(bank.balance).to eq(500)
+ end 
+
  end 
