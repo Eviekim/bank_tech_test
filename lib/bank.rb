@@ -19,5 +19,4 @@ class Bank
 
 
 
-end
-
+end 
