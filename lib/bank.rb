@@ -14,13 +14,13 @@ class Bank
  def deposit(amount)
   @balance += amount
   # @balance = balance + amount
-  @transactions.push(date: Date.today, amount: amount, balance: balance)
+  @transactions.push(date: Date.today, credit: amount, debit: nil, balance: balance)
  end 
 
  def withdrawal(amount)
   @balance -= amount
   # @balance = balance - amount
-  @transactions.push(date: Date.today, amount: -amount, balance: balance)
+  @transactions.push(date: Date.today, credit: nil, debit: -amount, balance: balance)
  end  
 
 
