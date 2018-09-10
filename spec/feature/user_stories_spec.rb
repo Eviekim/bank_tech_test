@@ -35,4 +35,30 @@ describe 'User Stories' do
   expect(bank.balance).to eq(500)
  end 
 
+ # As a customer,
+ # So that I can see my previous trasactions and account,
+ # I need to be able to print my account statement.
+
+ it 'can see the time of the deposit' do
+  bank = Bank.new
+  bank.deposit(1000)
+  bank.withdrawal(500)
+  expect(bank.transactions).to include
+  [{:date=>Date.today,
+  :amount=>1000,
+  :balance=>1000}] 
+ end
+
+ it 'can see a list of transactions' do
+  bank = Bank.new
+  bank.deposit(1000)
+  bank.withdrawal(500)
+  expect(bank.transactions).to include
+  [{:date=>Date.today,
+    :amount=>1000,
+    :balance=>1000},
+   {:date=>Date.today,
+    :amount=>-500,
+    :balance=>500}]
+  end 
  end 
