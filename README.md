@@ -45,8 +45,7 @@ To print the bank statement:
 ```
 Ruby
 Rspec
-Pry
-Rails
+irb
 ```
 
 ## Approach:
