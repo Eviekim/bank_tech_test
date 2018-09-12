@@ -1,14 +1,20 @@
 require_relative 'bank'
 
 class Statement
-    def initialize(bank = Bank.new)
-        @bank = bank 
-    end 
+  attr_reader :balance, :transactions
 
-    def print
-        puts "date || credit || debit || balance"
-        @bank.transactions.each do | transactions |
-            puts "#{transactions[:date]} || #{transactions[:credit]} || #{transactions[:debit]} || #{transactions[:balance]}" 
-        end
+  def initialize(bank = Bank.new)
+    @bank = bank
+  end
+
+  def print
+    puts 'date || credit || debit || balance'
+    @bank.transactions.each do |transactions|
+      puts "#{transactions[:date]} || #{transactions[:credit]} || #{transactions[:debit]} || #{transactions[:balance]}"
     end
+  end
+
+  private
+
+  attr_writer :balance, :transactions
 end

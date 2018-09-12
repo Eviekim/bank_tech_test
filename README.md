@@ -1,52 +1,52 @@
 # Bank Tech Test
-==================
 
+## How to use:
 
-## Instructions:
-### Requirements:
-
-* You should be able to interact with your code via a REPL like IRB or the JavaScript console.  (You don't need to implement a command line interface that takes input from STDIN.)
-* Deposits, withdrawal.
-* Account statement (date, amount, balance) printing.
-* Data can be kept in memory (it doesn't need to be stored to a database or anything).
-
-### Acceptance criteria:
-
-**Given** a client makes a deposit of 1000 on 10-01-2012  
-**And** a deposit of 2000 on 13-01-2012  
-**And** a withdrawal of 500 on 14-01-2012  
-**When** she prints her bank statement  
-**Then** she would see
-
+1. Fork this repo first on github
+2. Open your terminal and clone this repo
 ```
-date || credit || debit || balance
-14/01/2012 || || 500.00 || 2500.00
-13/01/2012 || 2000.00 || || 3000.00
-10/01/2012 || 1000.00 || || 1000.00
+git clone git@github.com:Eviekim/bank_tech_test.git
 ```
-
-
-## To use:
-
-Clone the directory:
+3. Change directory to 'bank_tech_test'
 ```
-> git clone git@github.com:Eviekim/bank_tech_test.git
-> cd bank_tech_test
+cd bank_tech_test
 ```
-In Pry:
+4. Run IRB and install bundle
+```
+bundle install
+irb
+```
+5. Require file you want to use
+```
+require './lib/statement.rb'
+```
+6. Create a bank account and statement for the Account
+```
+bank = Bank.new
+statement = Statement.new(bank)
+```
+7. Make your transactions
+* you can make a deposit (credit) by inputting : ``` bank.deposit(amount) ```
+* you can make a withdrawal (debit) by inputting : ``` bank.withdrawal(amount) ```
 
-To make a deposit:
-
-To make a withdrawal:
-
-To print the bank statement: 
+8. Print the statement to have a list of transactions
+```
+statement.print
+```
+9. To exit irb
+```
+irb
+```
+10. To see the number of tests and test coverage
+```
+rspec
+```
 
 ## Tech stack
 ```
 Ruby
 Rspec
-Pry
-Rails
+irb
 ```
 
 ## Approach:
@@ -77,3 +77,24 @@ I need to be able to print my account statement.
 7. Repeat until feature test is passed (feature is passed)
 8. Refactor
 
+### Requirements:
+
+* You should be able to interact with your code via a REPL like IRB or the JavaScript console.  (You don't need to implement a command line interface that takes input from STDIN.)
+* Deposits, withdrawal.
+* Account statement (date, amount, balance) printing.
+* Data can be kept in memory (it doesn't need to be stored to a database or anything).
+
+### Acceptance criteria:
+
+**Given** a client makes a deposit of 1000 on 10-01-2012  
+**And** a deposit of 2000 on 13-01-2012  
+**And** a withdrawal of 500 on 14-01-2012  
+**When** she prints her bank statement  
+**Then** she would see
+
+```
+date || credit || debit || balance
+14/01/2012 || || 500.00 || 2500.00
+13/01/2012 || 2000.00 || || 3000.00
+10/01/2012 || 1000.00 || || 1000.00
+```
