@@ -58,7 +58,6 @@ So that I can pay in to my account,
 I need to be able to make a deposit.
 ```
 ```
-
 As a customer,
 So that I can access the deposit in my accouunt,
 I need to be able to make a withdrawal.
