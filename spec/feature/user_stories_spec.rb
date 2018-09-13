@@ -60,11 +60,13 @@
        balance: 500.00 }]
   end
 
-  # it 'can print an account statement' do
-  #   bank = Bank.new
-  #   statement = Statement.new
-  #   expect(statement.print).to include
-  #   [{ date: Date.today,
-  #      credit:  }]
-  # end
+  it 'can print an account statement' do
+    bank = Bank.new
+    statement = Statement.new
+    expect(statement.print).to include
+   [{ date: Date.today,
+      credit: 1000.00,
+      debit: 500.00,
+      balance: 500.00  }]
+   end
  end

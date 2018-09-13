@@ -1,7 +1,10 @@
 require 'date'
 
 class Bank
-  attr_reader :balance, :transactions
+  attr_reader :balance, :transactions, :amount
+  # def balance
+  #  @ balance
+  # end
 
   INITIAL_BALANCE = 0
 
