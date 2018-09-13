@@ -1,7 +1,9 @@
 require_relative 'bank'
 
 class Statement
-  attr_reader :balance, :transactions
+  attr_reader :balance,
+              :transactions,
+              :amount
 
   def initialize(bank = Bank.new)
     @bank = bank
@@ -14,7 +16,6 @@ class Statement
     end
   end
 
-  private
-
-  attr_writer :balance, :transactions
+  # private
+  # attr_writer :balance, :transactions
 end

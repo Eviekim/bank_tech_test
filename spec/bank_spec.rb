@@ -2,8 +2,8 @@ require 'bank'
 require 'date'
 
 describe Bank do
-  let (:bank) { Bank.new }
-  let (:statement) { Statement.new }
+  let (:bank){ Bank.new }
+  let (:statement){ Statement.new }
 
   context 'when initialized' do
     it 'has an initial balance of zero' do

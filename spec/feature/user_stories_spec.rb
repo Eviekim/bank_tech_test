@@ -1,4 +1,4 @@
-describe 'User Stories' do
+ describe 'User Stories' do
   # first, the customer needs an account initialized balance of zero
 
   it 'has an initial balance of zero' do
@@ -66,6 +66,5 @@ describe 'User Stories' do
   #   expect(statement.print).to include
   #   [{ date: Date.today,
   #      credit:  }]
-  # end 
-
-end
+  # end
+ end
